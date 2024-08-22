@@ -16,15 +16,15 @@ class Body{
     public:
         Body(float initialX, float initialY);
 
-        float getMass();
+        float getMass() const;
         const sf::Color& getColor();
 
-        float getX();
-        float getY();
-        float getVelocityX();
+        float getX() const;
+        float getY() const;
+        float getVelocityX() const;
         float getVelocityY();
-        float getAccelerationX();
-        float getAccelerationY();
+        float getAccelerationX() const;
+        float getAccelerationY() const;
         void setMass(float m);
         void setColor(const sf::Color& c);
         void setX(float x);

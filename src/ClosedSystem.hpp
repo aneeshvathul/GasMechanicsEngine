@@ -5,6 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include "CircleBody.hpp"
 #include "CollisionState.hpp"
+#include "Utils.hpp"
 
 class ClosedSystem{
 
@@ -21,13 +22,14 @@ class ClosedSystem{
         sf::Clock clock;
         std::queue<CollisionState> collisionQueue;
         
-        void createCircleBody(float x, float y);
+        bool createCircleBody(float x, float y);
         void updateSystem();
         void updateKinematics();
         void updateWallCollisions();
         float getSystemEnergy();
         void setCollisionQueue();
         void printSystemMetrics(int frameCycle);
+        void stressTest(int numObjects);
     
     public:
         ClosedSystem(int displayWidth, int displayHeight, float timeStep, float spawnClearance, float epsilon);

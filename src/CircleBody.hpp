@@ -18,5 +18,6 @@ class CircleBody: public Body{
         void resolvePenetration(CircleBody& other);
 
         std::string toString() const override;
+        bool operator<(const CircleBody& other) const;
 
 };

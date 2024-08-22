@@ -1,7 +1,7 @@
 #include "Body.hpp"
 
 Body::Body(float initialX, float initialY){
-    float initialMass = Utils::getRandomFloat(0.5f, 5.f);
+    float initialMass = Utils::getRandomFloat(2.f, 5.f);
     const sf::Color& initialColor = Utils::getRandomColor();
     float initialXV = Utils::getRandomFloat(-120.f, 120.f);
     float initialYV = Utils::getRandomFloat(-120.f, 120.f);
@@ -18,7 +18,7 @@ Body::Body(float initialX, float initialY){
     setAccelerationY(initialYA);   
 }
 
-float Body::getMass(){
+float Body::getMass() const{
     return mass;
 }
 
@@ -26,15 +26,15 @@ const sf::Color& Body::getColor(){
     return color;
 }
 
-float Body::getX(){
+float Body::getX() const{
     return position.first;
 }
 
-float Body::getY(){
+float Body::getY() const{
     return position.second;
 }
 
-float Body::getVelocityX(){
+float Body::getVelocityX() const{
     return velocity.first;
 }
 
@@ -42,11 +42,11 @@ float Body::getVelocityY(){
     return velocity.second;
 }
 
-float Body::getAccelerationX(){
+float Body::getAccelerationX() const{
     return acceleration.first;
 }
 
-float Body::getAccelerationY(){
+float Body::getAccelerationY() const{
     return acceleration.second;
 }
 

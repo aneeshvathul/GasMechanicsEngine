@@ -1,7 +1,7 @@
 #include "CircleBody.hpp"
 
 CircleBody::CircleBody(float initialX, float initialY) : Body(initialX, initialY){
-    float radius = std::sqrtf(150.f * getMass());
+    float radius = std::sqrtf(5.f * getMass());
     shape.setRadius(radius);
     shape.setPosition(initialX - radius, initialY - radius);
     shape.setFillColor(getColor());
@@ -83,4 +83,8 @@ void CircleBody::resolvePenetration(CircleBody& other){
 
 std::string CircleBody::toString() const{
     return Body::toString() + ", Radius: " + std::to_string(shape.getRadius());
+}
+
+bool CircleBody::operator<(const CircleBody& other) const{
+    return getX() < other.getX();
 }

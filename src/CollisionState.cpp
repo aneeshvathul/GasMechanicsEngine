@@ -1,43 +1,20 @@
 #include "CollisionState.hpp"
 
-CollisionState::CollisionState(){
-    frame = 10368000;
-    first = -1;
-    second = -1;
-}
 
-CollisionState::CollisionState(int f, int i1, int i2){
+CollisionState::CollisionState(int f, CircleBody* p1, CircleBody* p2){
     frame = f;
-    first = i1;
-    second = i2;
+    first = p1;
+    second = p2;
 }
 
-int CollisionState::getFrame(){
+int CollisionState::getFrame() const{
     return frame;
 }
 
-int CollisionState::getFirst(){
+CircleBody* CollisionState::getFirst() const{
     return first;
 }
 
-int CollisionState::getSecond(){
+CircleBody* CollisionState::getSecond() const{
     return second;
-}
-
-void CollisionState::setFrame(int f){
-    frame = f;
-}
-
-void CollisionState::setFirst(int i1){
-    first = i1;
-}
-
-void CollisionState::setSecond(int i2){
-    second = i2;
-}
-
-void CollisionState::setState(int f, int i1, int i2){
-    frame = f;
-    first = i1;
-    second = i2;
 }
