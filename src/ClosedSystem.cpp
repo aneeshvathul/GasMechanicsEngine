@@ -14,7 +14,7 @@ ClosedSystem::ClosedSystem(int displayWidth, int displayHeight, float timeStep, 
 
 void ClosedSystem::run(){
 
-    sf::RenderWindow window(sf::VideoMode(displayWidth, displayHeight), "Physics Engine 2D");
+    sf::RenderWindow window(sf::VideoMode(displayWidth, displayHeight), "2D Gas-Mechanics Engine");
 
     bool drawBody = true;
     while (window.isOpen()){
@@ -219,6 +219,5 @@ void ClosedSystem::stressTest(int numObjects){
         while (!createCircleBody(Utils::getRandomFloat(0.f, displayWidth), Utils::getRandomFloat(0.f, displayHeight))){
             continue;
         }
-        setCollisionQueue();
     }
 }
