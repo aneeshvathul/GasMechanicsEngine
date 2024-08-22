@@ -16,7 +16,7 @@ class Utils{
         };
 
     public:
-        static long double getRandomDouble(long double min, long double max);
+        static float getRandomFloat(float min, float max);
         static const sf::Color& getRandomColor();
 
 };

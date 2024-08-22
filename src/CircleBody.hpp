@@ -8,10 +8,15 @@ class CircleBody: public Body{
         sf::CircleShape shape;
 
     public:
-        CircleBody(long double initialX, long double initialY);
+        CircleBody(float initialX, float initialY);
         
         sf::CircleShape& getShape();
-        long double getDistance(CircleBody& other);
+        float getDistance(CircleBody& other);
+        float getDistance(float x, float y);
         bool isCollidingWith(CircleBody& other);
+        void elasticCollide(CircleBody& other);
+        void resolvePenetration(CircleBody& other);
+
+        std::string toString() const override;
 
 };

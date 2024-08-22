@@ -1,11 +1,11 @@
 #include "Utils.hpp"
 
 // Get a random doubleing point number in the range [min, max)
-long double Utils::getRandomDouble(long double min, long double max){
+float Utils::getRandomFloat(float min, float max){
     std::random_device rd;
     std::mt19937 gen(rd()); 
-    std::uniform_real_distribution<long double> distrib(min, max);
-    long double randomdouble = distrib(gen);
+    std::uniform_real_distribution<float> distrib(min, max);
+    float randomdouble = distrib(gen);
     return randomdouble;
 }
 

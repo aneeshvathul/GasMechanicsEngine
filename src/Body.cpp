@@ -1,12 +1,12 @@
 #include "Body.hpp"
 
-Body::Body(long double initialX, long double initialY){
-    long double initialMass = Utils::getRandomDouble(0.5, 5.0);
+Body::Body(float initialX, float initialY){
+    float initialMass = Utils::getRandomFloat(0.5f, 5.f);
     const sf::Color& initialColor = Utils::getRandomColor();
-    long double initialXV = Utils::getRandomDouble(-200.0, 200.0);
-    long double initialYV = Utils::getRandomDouble(-200.0, 200.0);
-    long double initialXA = 0.0;
-    long double initialYA = 0.0;
+    float initialXV = Utils::getRandomFloat(-120.f, 120.f);
+    float initialYV = Utils::getRandomFloat(-120.f, 120.f);
+    float initialXA = 0.f;
+    float initialYA = 0.f;
     
     setMass(initialMass);
     setColor(initialColor);
@@ -18,7 +18,7 @@ Body::Body(long double initialX, long double initialY){
     setAccelerationY(initialYA);   
 }
 
-long double Body::getMass(){
+float Body::getMass(){
     return mass;
 }
 
@@ -26,31 +26,31 @@ const sf::Color& Body::getColor(){
     return color;
 }
 
-long double Body::getX(){
+float Body::getX(){
     return position.first;
 }
 
-long double Body::getY(){
+float Body::getY(){
     return position.second;
 }
 
-long double Body::getVelocityX(){
+float Body::getVelocityX(){
     return velocity.first;
 }
 
-long double Body::getVelocityY(){
+float Body::getVelocityY(){
     return velocity.second;
 }
 
-long double Body::getAccelerationX(){
+float Body::getAccelerationX(){
     return acceleration.first;
 }
 
-long double Body::getAccelerationY(){
+float Body::getAccelerationY(){
     return acceleration.second;
 }
 
-void Body::setMass(long double m){
+void Body::setMass(float m){
     mass = m;
 }
 
@@ -58,27 +58,31 @@ void Body::setColor(const sf::Color& c){
     color = c;
 }
 
-void Body::setX(long double x){
+void Body::setX(float x){
     position.first = x;
 }
 
-void Body::setY(long double y){
+void Body::setY(float y){
     position.second = y;
 }
 
-void Body::setVelocityX(long double xv){
-    velocity.first = xv;
+void Body::setVelocityX(float vx){
+    velocity.first = vx;
 }
 
-void Body::setVelocityY(long double yv){
-    velocity.second = yv;
+void Body::setVelocityY(float vy){
+    velocity.second = vy;
 }
 
-void Body::setAccelerationX(long double xa){
-    acceleration.first = xa;
+void Body::setAccelerationX(float ax){
+    acceleration.first = ax;
 }
 
-void Body::setAccelerationY(long double ya){
-    acceleration.second = ya;
+void Body::setAccelerationY(float ay){
+    acceleration.second = ay;
+}
+
+std::string Body::toString() const{
+    return "Mass: " + std::to_string(mass) + ", VX: " + std::to_string(velocity.first) + ", VY: " + std::to_string(velocity.second);
 }
 
