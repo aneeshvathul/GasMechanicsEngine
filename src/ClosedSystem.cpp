@@ -140,11 +140,8 @@ void ClosedSystem::updateKinematics(){
 
 void ClosedSystem::setCollisionQueue(){
     // Check collisions between bodies via sweep-and-prune
-    for (int i = 0; i < circleBodies.size() - 1; i++){
-        if (circleBodies[i + 1] < circleBodies[i]){
-            std::swap(circleBodies[i], circleBodies[i + 1]);
-        }
-    }
+    std::sort(circleBodies.begin(), circleBodies.end());
+
     int minFrame = 10368000;
     for (int i = 0; i < circleBodies.size() - 1; i++){
         CircleBody& circleBody1 = circleBodies[i];
