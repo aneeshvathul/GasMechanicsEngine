@@ -12,9 +12,6 @@ First, clone this repo
 ```
 git clone https://github.com/aneeshvathul/GasMechanicsEngine
 ```
-
-Or you can click the green `Use this template` to automagically make a new repo under your account with all the files ([example](https://github.com/Beatzoid/sfml-template-test)) and then clone that.
-
 <br />
 
 Then, open it in VSCode,
