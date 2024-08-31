@@ -33,3 +33,4 @@ First, you need to edit the `Makefile` and change the `SFML_PATH` variable to th
 
 Then, press `Cmd+Shift+B` in VSCode to build and `FN+F5` to run. If it works, you should see a window with a black background and cyan circle. Once you exit the program, you should also see the number "5" in the terminal. Congrats, you can now make whatever you want with SFML!
 
+https://github.com/user-attachments/assets/1db2996e-1a43-4b42-ab17-2e4b1c809c41
